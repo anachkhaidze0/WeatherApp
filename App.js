@@ -52,7 +52,7 @@ export default function App() {
       // Getting city name by location
       let location = await Location.getCurrentPositionAsync({})
       let city = await Location.reverseGeocodeAsync(location.coords)
-      setLocation(city[0].region)
+      setLocation(city[0].city)
 
       // Getting weather from openweathermap.org
       const weather = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=metric&exclude=minutely&appid=${API_KEY}`);
